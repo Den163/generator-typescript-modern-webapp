@@ -19,8 +19,11 @@ yo typescript-modern-webapp
 ## Generated project structure
 
 **src** - is a root folder with your typescript code. Where main.js just makes jquery global and calls static ```main()``` method of the Program class. Program class using as an entry point of your web application (Like in Java or C#)
+
 **public** - is a root folder for your web application
+
 **public/js** - contains transpilled javascript code and source maps
+
 **public/css** - contains custom css styles. Style.css importing a [CSS reset](https://meyerweb.com/eric/tools/css/reset/)
 
 src - is a root folder 
