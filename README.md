@@ -26,8 +26,6 @@ yo typescript-modern-webapp
 
 **public/css** - contains custom css styles. Style.css importing a [CSS reset](https://meyerweb.com/eric/tools/css/reset/)
 
-src - is a root folder 
-
 ## Getting To Know Yeoman
 
  * Yeoman has a heart of gold.
