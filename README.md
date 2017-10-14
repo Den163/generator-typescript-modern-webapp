@@ -16,6 +16,16 @@ Then generate your new project:
 yo typescript-modern-webapp
 ```
 
+## Generated project structure
+
+<bold>src</bold> - is a root folder with your typescript code. Where main.js just makes jquery global and calls static 'main()' method of the Program class. Program class using as an entry point of your web application (Like in Java or C#)
+
+<bold>public</bold> - is a root folder for your web application
+<bold>public/js</bold> - contains transpilled javascript code and source maps
+<bold>public/css</bold> - contains custom css styles. Style.css importing a [CSS reset](https://meyerweb.com/eric/tools/css/reset/)
+
+src - is a root folder 
+
 ## Getting To Know Yeoman
 
  * Yeoman has a heart of gold.
