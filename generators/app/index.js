@@ -10,12 +10,20 @@ module.exports = class extends Generator {
       'Welcome to the super ' + chalk.red('generator-typescript-modern-webapp') + ' generator!'
     ));
 
-    const prompts = [{
-      type: 'confirm',
-      name: 'someAnswer',
-      message: 'Would you like to enable this option?',
-      default: true
-    }];
+    const prompts = [
+      {
+        type: 'input',
+        name: 'username',
+        message: "What's your name user?",
+        default: "user"
+      },
+      {
+        type: 'confirm',
+        name: 'vscode',
+        message: "Are you using Visual Studio Code?",
+        default: false
+      }
+    ];
 
     return this.prompt(prompts).then(props => {
       // To access props later use this.props.someAnswer;
@@ -24,13 +32,24 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    this.fs.copy(
-      this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
+    this.fs.copyTpl(
+      this.templatePath(), this.destinationPath()
     );
+
+    if (this.props.vscode)
+    {
+      this.fs.copy(
+        this.templatePath(".vscode"), this.destinationPath(".vscode")
+      );
+    }
+
+    const pkg = this.fs.readJSON(this.destinationPath("package.json"), {});
+    pkg.name = this.props.username;
+
+    this.fs.writeJSON(this.destinationPath("package.json"), pkg);
   }
 
   install() {
-    this.installDependencies();
+    this.installDependencies({bower: false, yarn: false});
   }
 };

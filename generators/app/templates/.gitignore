@@ -1,0 +1,5 @@
+node_modules
+
+# Project binaries
+*js/main.js
+*js/main.js.map

@@ -10,8 +10,8 @@ describe('generator-typescript-modern-webapp:app', () => {
   });
 
   it('creates files', () => {
-    assert.file([
-      'dummyfile.txt'
+    assert.directory([
+      '.vscode'
     ]);
   });
 });
