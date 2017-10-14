@@ -1,6 +1,8 @@
 # generator-typescript-modern-webapp [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > 
 
+This is an usual [typescript](https://www.typescriptlang.org/) web aplication generator, that contains [webpack module bundler](https://webpack.js.org/) with [awesome-typescript-loader](https://www.npmjs.com/package/shmawesome-typescript-loader) plugin and pre-installed [jQuery](https://jquery.com/) library
+
 ## Installation
 
 First, install [Yeoman](http://yeoman.io) and generator-typescript-modern-webapp using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
@@ -22,9 +24,13 @@ yo typescript-modern-webapp
 
 **public** - is a root folder for your web application
 
-**public/js** - contains transpilled javascript code and source maps
+**public/js** - contains transpilled javascript code and source maps (due to which you can debug your typescript code)
 
 **public/css** - contains custom css styles. Style.css importing a [CSS reset](https://meyerweb.com/eric/tools/css/reset/)
+
+## Using a template
+You need to run console utilities ```http-server``` and ```webpack``` in separate processes.
+If you are visual studio code user just run the appropriate tasks (that project contains by default). After it you can see result by adress [localhost:8080](localhost:8080). If you are vs code user you can press ```F5``` and debug your application with breakpoint and other stuff
 
 ## Getting To Know Yeoman
 
