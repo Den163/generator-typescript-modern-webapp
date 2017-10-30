@@ -6,7 +6,7 @@
         {
             "taskName": "webpack",
             "type": "shell",
-            "command": "webpack",
+            "command": "npm run webpack",
             "problemMatcher": [
                 "$tsc"
             ]
@@ -15,7 +15,7 @@
         {
             "taskName": "HTTP-server",
             "type": "shell",
-            "command": "http-server",
+            "command": "npm run http-server",
             "problemMatcher": []
         }
     ]
