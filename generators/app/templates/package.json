@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack",
-    "http-server": "http-server"
+    "http-server": "http-server",
+    "ts-node": "ts-node"
   },
   "author": "",
   "license": "ISC",

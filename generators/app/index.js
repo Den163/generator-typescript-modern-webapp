@@ -27,7 +27,7 @@ module.exports = class extends Generator {
         type: 'list',
         name: 'testfw',
         message: 'What testing framework are you using?',
-        choises: ['None', 'Alsatian'],
+        choices: ['None', 'Alsatian'],
         default: 'Alsatian'
       }
     ];
@@ -71,7 +71,7 @@ module.exports = class extends Generator {
     );
 
     pkg.devDependencies.alsatian = "*";
-    pkg.scripts.test = "npm run ts-node tsrunner.ts";
+    pkg.scripts.test = "npm run ts-node testrunner.ts";
   }
 
   install() {

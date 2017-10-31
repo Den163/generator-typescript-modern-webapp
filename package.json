@@ -1,6 +1,6 @@
 {
   "name": "generator-typescript-modern-webapp",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Typescript web application generator with webpack and jquery pre-installed",
   "homepage": "https://github.com/Den163/generator-typescript-modern-webapp",
   "author": {

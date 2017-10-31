@@ -17,6 +17,13 @@
             "type": "shell",
             "command": "npm run http-server",
             "problemMatcher": []
+        },
+
+        {
+            "taskName": "Run tests",
+            "type": "shell",
+            "command": "npm test",
+            "problemMatcher": []
         }
     ]
 }

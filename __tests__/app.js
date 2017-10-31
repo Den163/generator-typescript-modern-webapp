@@ -20,7 +20,7 @@ describe('generator-typescript-modern-webapp:alsatian', () => {
       .withPrompts({vscode: true, testfw: 'Alsatian'});
   });
 
-  it('creates files when vscode is true', () => {
+  it('create alsatian testrunner', () => {
     assert.file('testrunner.ts');
   });
 });
@@ -33,5 +33,16 @@ describe('generator-typescript-modern-webapp:novscode', () => {
 
   it('do not create file when vscode is false', () => {
     assert.noFile('.vscode/launch.json');
+  });
+});
+
+describe('generator-typescript-modern-webapp:noalsatian', () => {
+  beforeAll(() => {
+    return helpers.run(path.join(__dirname, '../generators/app'))
+      .withPrompts({vscode: false, testfw: 'None'});
+  });
+
+  it('do not create alsatian testrunner', () => {
+    assert.noFile('testrunner.ts');
   });
 });
