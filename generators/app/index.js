@@ -43,13 +43,14 @@ module.exports = class extends Generator {
       this.templatePath(), this.destinationPath()
     );
 
-    if (this.props.vscode)
-    {
-      this._setupVsCode();
-    }
-
     const pkg = this.fs.readJSON(this.destinationPath("package.json"), {});
     pkg.name = this.props.username;
+
+    if (this.props.vscode)
+      this._setupVsCode();
+
+    if (this.props.testfw === "Alsatian")
+      this._setupAlsatian(pkg);
 
     this.fs.writeJSON(this.destinationPath("package.json"), pkg);
   }
@@ -58,6 +59,19 @@ module.exports = class extends Generator {
     this.fs.copy(
       this.templatePath(".vscode"), this.destinationPath(".vscode")
     );
+  }
+
+  _setupAlsatian(pkg) {
+    this.fs.copy(
+      this.templatePath(".alsatian/testrunner"), this.destinationPath("./")
+    );
+
+    this.fs.copy(
+      this.templatePath(".alsatian/test"), this.destinationPath("./test")
+    );
+
+    pkg.devDependencies.alsatian = "*";
+    pkg.scripts.test = "npm run ts-node tsrunner.ts";
   }
 
   install() {

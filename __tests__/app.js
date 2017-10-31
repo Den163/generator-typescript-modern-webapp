@@ -14,6 +14,17 @@ describe('generator-typescript-modern-webapp:vscode', () => {
   });
 });
 
+describe('generator-typescript-modern-webapp:alsatian', () => {
+  beforeAll(() => {
+    return helpers.run(path.join(__dirname, '../generators/app'))
+      .withPrompts({vscode: true, testfw: 'Alsatian'});
+  });
+
+  it('creates files when vscode is true', () => {
+    assert.file('testrunner.ts');
+  });
+});
+
 describe('generator-typescript-modern-webapp:novscode', () => {
   beforeAll(() => {
     return helpers.run(path.join(__dirname, '../generators/app'))
