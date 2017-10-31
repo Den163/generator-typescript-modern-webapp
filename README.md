@@ -5,7 +5,8 @@ This is an usual [typescript](https://www.typescriptlang.org/) web aplication ge
 
 ## What's new? 
 
-**1.0.4** - Now it supports testing framework [Alsatian](https://github.com/alsatian-test/alsatian). Yeah, for now you can test you app in xUnit (JUnit, NUnit) style!!!
+**1.0.5** - Now it supports testing framework [Alsatian](https://github.com/alsatian-test/alsatian). Yeah, for now you can test you app in xUnit (JUnit, NUnit) style! All you need is keep your test files in ```test``` directory and run ```npm test``` or **Run Test** task in VS Code.
+PS: By default **Alsatian** package doesn't contain typescript test runner, but generated project does.
 
 ## Installation
 
