@@ -3,15 +3,24 @@ const path = require('path');
 const assert = require('yeoman-assert');
 const helpers = require('yeoman-test');
 
-describe('generator-typescript-modern-webapp:app', () => {
+describe('generator-typescript-modern-webapp:vscode', () => {
   beforeAll(() => {
     return helpers.run(path.join(__dirname, '../generators/app'))
-      .withPrompts({someAnswer: true});
+      .withPrompts({vscode: true});
   });
 
-  it('creates files', () => {
-    assert.directory([
-      '.vscode'
-    ]);
+  it('creates files when vscode is true', () => {
+    assert.file('.vscode/launch.json');
+  });
+});
+
+describe('generator-typescript-modern-webapp:novscode', () => {
+  beforeAll(() => {
+    return helpers.run(path.join(__dirname, '../generators/app'))
+      .withPrompts({vscode: false});
+  });
+
+  it('do not create file when vscode is false', () => {
+    assert.noFile('.vscode/launch.json');
   });
 });

@@ -22,6 +22,13 @@ module.exports = class extends Generator {
         name: 'vscode',
         message: "Are you using Visual Studio Code?",
         default: false
+      },
+      {
+        type: 'list',
+        name: 'testfw',
+        message: 'What testing framework are you using?',
+        choises: ['None', 'Alsatian'],
+        default: 'Alsatian'
       }
     ];
 
@@ -38,15 +45,19 @@ module.exports = class extends Generator {
 
     if (this.props.vscode)
     {
-      this.fs.copy(
-        this.templatePath(".vscode"), this.destinationPath(".vscode")
-      );
+      this._setupVsCode();
     }
 
     const pkg = this.fs.readJSON(this.destinationPath("package.json"), {});
     pkg.name = this.props.username;
 
     this.fs.writeJSON(this.destinationPath("package.json"), pkg);
+  }
+
+  _setupVsCode() {
+    this.fs.copy(
+      this.templatePath(".vscode"), this.destinationPath(".vscode")
+    );
   }
 
   install() {
