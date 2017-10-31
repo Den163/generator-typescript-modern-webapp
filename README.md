@@ -3,6 +3,10 @@
 
 This is an usual [typescript](https://www.typescriptlang.org/) web aplication generator, that contains simple nodejs [http-server](https://www.npmjs.com/package/http-server), [webpack module bundler](https://webpack.js.org/) with [awesome-typescript-loader](https://www.npmjs.com/package/shmawesome-typescript-loader) plugin and pre-installed [jQuery](https://jquery.com/) library
 
+## What's new? 
+
+**1.0.4** - Now it supports testing framework [Alsatian](https://github.com/alsatian-test/alsatian). Yeah, for now you can test you app in xUnit (JUnit, NUnit) style!!!
+
 ## Installation
 
 First, install [Yeoman](http://yeoman.io) and generator-typescript-modern-webapp using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
