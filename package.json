@@ -16,7 +16,8 @@
     "typescript",
     "webpack",
     "webapp",
-    "yeoman-generator"
+    "yeoman-generator",
+    "alsatian"
   ],
   "devDependencies": {
     "yeoman-test": "^1.7.0",
