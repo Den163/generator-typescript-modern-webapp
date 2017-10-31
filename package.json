@@ -1,6 +1,6 @@
 {
   "name": "generator-typescript-modern-webapp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Typescript web application generator with webpack and jquery pre-installed",
   "homepage": "https://github.com/Den163/generator-typescript-modern-webapp",
   "author": {
@@ -42,7 +42,6 @@
   },
   "scripts": {
     "prepublish": "nsp check",
-    "pretest": "eslint .",
     "precommit": "lint-staged",
     "test": "jest"
   },
@@ -70,11 +69,7 @@
     ],
     "rules": {
       "prettier/prettier": [
-        {
-          "singleQuote": true,
-          "printWidth": 90
-        },
-        "error"
+        "off"
       ]
     }
   },
